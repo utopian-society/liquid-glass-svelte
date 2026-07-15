@@ -50,7 +50,7 @@
   </div>
   {/if}
 
-  <div class="lg-tint absolute inset-0 opacity-30" style="background-color: rgba(255, 255, 255, 0.15);" />
+  <div class="lg-tint absolute inset-0 opacity-30 z-5 pointer-events-none" style="background-color: rgba(255, 255, 255, 0.15);" />
 
   <div class="lg-content relative z-10">
     {@render children?.()}
@@ -78,7 +78,7 @@
       <feDisplacementMap
         in="SourceGraphic"
         in2="blurred"
-        scale="230"
+        scale="80"
         xChannelSelector="R"
         yChannelSelector="G"
       />
@@ -177,6 +177,11 @@
   .liquid-glass-wrap:has(.lg-content:active) .lg-shadow::after {
     top: calc(var(--shadow-cuttoff-fix) - 0.5em);
     opacity: 0.75;
+  }
+
+  .lg-tint {
+    z-index: 5;
+    pointer-events: none;
   }
 
   .lg-content {
