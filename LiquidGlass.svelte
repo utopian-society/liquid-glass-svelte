@@ -185,6 +185,7 @@
   }
 
   .lg-content {
+    z-index: 10;
     pointer-events: auto;
     position: relative;
   }
